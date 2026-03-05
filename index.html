@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>Coral Pearl Navire Ltd | Ship Suppliers & Marine Provisions Nigeria</title>
+  <meta name="description" content="Ship suppliers and marine provisions for vessels, rigs, FPSOs, and PSOs in Nigeria. Provisions, bonded stores, technical supplies, and cleaning materials. Just on time... for your needs!">
+  <meta name="keywords" content="ship supplier, marine provisions, Nigeria, Port Harcourt, bonded stores, technical supplies, provisions, ship chandler, West Africa, offshore supplies">
+  <meta name="author" content="Coral Pearl Navire Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://coralpearlnavire.com/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://coralpearlnavire.com/">
+  <meta property="og:title" content="Coral Pearl Navire Ltd | Ship Suppliers & Marine Provisions Nigeria">
+  <meta property="og:description" content="Ship suppliers and marine provisions for vessels, rigs, FPSOs, and PSOs in Nigeria. Just on time... for your needs!">
+  <meta property="og:image" content="https://coralpearlnavire.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_NG">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coral Pearl Navire Ltd | Ship Suppliers & Marine Provisions">
+  <meta name="twitter:description" content="Ship suppliers and marine provisions for vessels, rigs, FPSOs, and PSOs in Nigeria.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              lightest: '#ffffff',
+              light: '#f8fafc',
+              medium: '#f1f5f9'
+            },
+            cyan: {
+              DEFAULT: '#04b4ec',
+              dark: '#034a82',
+              light: '#5CE1F0'
+            },
+            coral: {
+              DEFAULT: '#f43f5e',
+              dark: '#e11d48',
+              light: '#fb7185'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .glass {
+        @apply bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm;
+      }
+      .glass-dark {
+        @apply bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md;
+      }
+      .gradient-primary {
+        @apply bg-cyan;
+      }
+      .gradient-accent {
+        @apply bg-coral;
+      }
+      .text-gradient {
+        @apply text-cyan-dark;
+      }
+    }
+  </style>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    .hero-bg-animate {
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .text-rotate {
+      display: inline-block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Nav link animated underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #04b4ec;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* Mobile menu slide animation */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    /* Hamburger to X animation */
+    .hamburger-line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #mobile-menu-btn.open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #mobile-menu-btn.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    #mobile-menu-btn.open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Header shrink on scroll */
+    #header {
+      transition: all 0.3s ease;
+    }
+    #header.scrolled .h-20 {
+      height: 4rem;
+    }
+    #header.scrolled img {
+      height: 2.5rem;
+      transition: height 0.3s ease;
+    }
+
+    /* Nav links entrance animation */
+    .nav-link {
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: navFadeIn 0.5s ease forwards;
+    }
+    .nav-link:nth-child(1) { animation-delay: 0.1s; }
+    .nav-link:nth-child(2) { animation-delay: 0.2s; }
+    .nav-link:nth-child(3) { animation-delay: 0.3s; }
+    .nav-link:nth-child(4) { animation-delay: 0.4s; }
+    .nav-cta {
+      opacity: 0;
+      animation: navFadeIn 0.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes navFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* CTA button pulse */
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(4, 180, 236, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(4, 180, 236, 0); }
+    }
+    .nav-cta {
+      animation: navFadeIn 0.5s ease forwards, ctaPulse 2s ease-in-out infinite;
+      animation-delay: 0.5s, 1s;
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Coral Pearl Navire Ltd",
+    "description": "Ship suppliers and marine provisions company providing quality supplies to vessels, rigs, FPSOs, and PSOs in Nigeria.",
+    "url": "https://coralpearlnavire.com",
+    "logo": "https://coralpearlnavire.com/images/logo.png",
+    "image": "https://coralpearlnavire.com/images/og-image.jpg",
+    "telephone": ["+234-803-435-2534", "+234-817-567-6274", "+234-803-339-0513"],
+    "email": ["services@coralpearlnavire.com", "info@coralpearlnavire.com"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Opposite Plot 15 Osi Estate, Haaptrust Street, Oroazi",
+      "addressLocality": "Port Harcourt",
+      "addressRegion": "Rivers State",
+      "addressCountry": "NG"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/coralpearlnavire",
+      "https://www.linkedin.com/company/coralpearlnavire"
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans bg-white text-slate-900 antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-dark" id="header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+          <img src="images/logo.png" alt="Coral Pearl Navire Ltd Logo" class="h-16 w-auto">
+          <span class="hidden lg:block text-cyan italic text-sm">"Just on time... for your needs!"</span>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-slate-900 font-medium hover:text-cyan transition-colors">Home</a>
+          <a href="about.html" class="nav-link text-slate-600 font-medium hover:text-cyan transition-colors">About</a>
+          <a href="products.html" class="nav-link text-slate-600 font-medium hover:text-cyan transition-colors">Services</a>
+          <a href="gallery.html" class="nav-link text-slate-600 font-medium hover:text-cyan transition-colors">Gallery</a>
+          <a href="contact.html" class="nav-cta px-5 py-2.5 bg-cyan text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan/25 transition-all">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2 text-slate-900" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <div class="w-6 h-6 flex flex-col justify-center items-center">
+            <span class="hamburger-line block w-6 h-0.5 bg-slate-900 mb-1.5"></span>
+            <span class="hamburger-line block w-6 h-0.5 bg-slate-900 mb-1.5"></span>
+            <span class="hamburger-line block w-6 h-0.5 bg-slate-900"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden glass-dark" id="mobile-menu">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-cyan font-medium py-2">Home</a>
+        <a href="about.html" class="block text-slate-600 hover:text-cyan font-medium py-2">About</a>
+        <a href="products.html" class="block text-slate-600 hover:text-cyan font-medium py-2">Services</a>
+        <a href="gallery.html" class="block text-slate-600 hover:text-cyan font-medium py-2">Gallery</a>
+        <a href="contact.html" class="block text-cyan font-medium py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-start overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="images/hero/hero-image.jpg"
+           alt=""
+           class="w-full h-full object-cover hero-bg-animate">
+    </div>
+
+    <!-- Decorative Orbs -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-cyan/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-coral/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan/5 rounded-full blur-3xl"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-32">
+      <div class="text-left lg:w-1/2 xl:w-2/5">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm mb-8">
+          <i class="fas fa-anchor text-cyan"></i>
+          <span class="text-slate-600">Trusted Ship Suppliers</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-snug whitespace-nowrap">
+          Ship <span id="rotating-text" class="text-white" style="transition: opacity 0.3s ease-out;"></span>
+        </h1>
+
+        <p class="text-lg text-slate-200 max-w-xl mb-10 drop-shadow-sm">
+          Complete vessel provisioning for ships, rigs, FPSOs, and PSOs. Food supplies, bonded stores, technical equipment, and cleaning materials delivered offshore and ashore across Nigeria.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-start mb-16">
+          <a href="contact.html" class="px-8 py-4 bg-cyan text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan/25 transition-all text-lg">
+            Request a Quote
+          </a>
+          <a href="products.html" class="px-8 py-4 glass text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-all text-lg">
+            Our Services
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex flex-nowrap justify-start items-center gap-3 lg:gap-4">
+          <div class="text-center px-4 lg:px-5 py-2">
+            <div class="text-3xl font-bold text-white">500+</div>
+            <div class="text-sm text-slate-200">Vessels Supplied</div>
+          </div>
+          <div class="hidden md:block w-px h-12 bg-white/30"></div>
+          <div class="text-center px-4 lg:px-5 py-2">
+            <div class="text-3xl font-bold text-white">24hr</div>
+            <div class="text-sm text-slate-200">Response Time</div>
+          </div>
+          <div class="hidden md:block w-px h-12 bg-white/30"></div>
+          <div class="text-center px-4 lg:px-5 py-2">
+            <div class="text-3xl font-bold text-white">15+</div>
+            <div class="text-sm text-slate-200">Years Experience</div>
+          </div>
+          <div class="hidden md:block w-px h-12 bg-white/30"></div>
+          <div class="text-center px-4 lg:px-5 py-2">
+            <div class="text-3xl font-bold text-white">6</div>
+            <div class="text-sm text-slate-200">Countries Sourced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <div class="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
+        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Client Carousel -->
+  <section class="py-12 bg-slate-light border-y border-slate-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-slate-500 text-sm uppercase tracking-wider mb-8">Trusted by Maritime Leaders</p>
+    </div>
+    <div class="relative">
+      <div class="flex animate-marquee hover:[animation-play-state:paused] whitespace-nowrap">
+        <!-- First set of clients -->
+        <span class="text-xl font-semibold text-slate-400 mx-8">Addax Petroleum</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Bourbon</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Chevron</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">ExxonMobil</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Maersk</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">MCT</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">SouthPoint Maritime</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">RK Offshore</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Shell</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Topaz Energy</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Thome Group</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Total</span>
+        <!-- Duplicate set for seamless loop -->
+        <span class="text-xl font-semibold text-slate-400 mx-8">Addax Petroleum</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Bourbon</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Chevron</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">ExxonMobil</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Maersk</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">MCT</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">SouthPoint Maritime</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">RK Offshore</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Shell</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Topaz Energy</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Thome Group</span>
+        <span class="text-xl font-semibold text-slate-400 mx-8">Total</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-slate-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-cyan text-sm font-semibold uppercase tracking-wider">What We Supply</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2 mb-4">Our Services</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Complete vessel provisioning for ships, rigs, FPSOs, and PSOs. Food supplies, bonded stores, technical equipment, and cleaning materials delivered offshore and ashore across Nigeria.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Provisions -->
+        <div class="bg-white overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-300/50 hover:-translate-y-2 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=80" alt="Fresh food provisions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-3">Provisions</h3>
+            <p class="text-slate-600 text-sm mb-4">Fresh food, dry stores, and quality provisions sourced from Nigeria and international suppliers.</p>
+            <a href="products.html" class="text-cyan text-sm font-medium hover:underline inline-flex items-center gap-1">
+              Learn more <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bonded Stores -->
+        <div class="bg-white overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-300/50 hover:-translate-y-2 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Bonded stores beverages" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-3">Bonded Stores</h3>
+            <p class="text-slate-600 text-sm mb-4">Duty-free beverages, soft drinks, and bonded supplies for crew welfare and vessel operations.</p>
+            <a href="products.html" class="text-cyan text-sm font-medium hover:underline inline-flex items-center gap-1">
+              Learn more <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical Supplies -->
+        <div class="bg-white overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-300/50 hover:-translate-y-2 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Technical supplies and equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-3">Technical Supplies</h3>
+            <p class="text-slate-600 text-sm mb-4">Engine board materials, equipment, and technical supplies for vessel maintenance and operations.</p>
+            <a href="products.html" class="text-cyan text-sm font-medium hover:underline inline-flex items-center gap-1">
+              Learn more <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cleaning Materials -->
+        <div class="bg-white overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-300/50 hover:-translate-y-2 transition-all duration-300 group">
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=800&q=80" alt="Cleaning materials and supplies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-3">Cleaning Materials</h3>
+            <p class="text-slate-600 text-sm mb-4">Deck cleaning products, degreasers, and maintenance supplies to keep your vessel pristine.</p>
+            <a href="products.html" class="text-cyan text-sm font-medium hover:underline inline-flex items-center gap-1">
+              Learn more <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Services CTA -->
+      <div class="mt-12 text-center">
+        <a href="products.html" class="inline-flex items-center gap-2 px-6 py-3 glass text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-all">
+          View All Services <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-slate-medium relative overflow-hidden">
+    <div class="absolute inset-0 bg-cyan/10"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Supply Your Vessel?</h2>
+      <p class="text-xl text-slate-600 mb-8">Send your requirements list. We respond within 24 hours with competitive pricing.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="px-8 py-4 bg-coral text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-coral/25 transition-all text-lg">
+          Request Quote
+        </a>
+        <a href="tel:+2348034352534" class="px-8 py-4 glass text-slate-900 font-semibold rounded-lg hover:bg-slate-200 transition-all text-lg">
+          <i class="fas fa-phone mr-2"></i> Call Us Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-medium border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <!-- Brand Column -->
+        <div>
+          <img src="images/logo.png" alt="Coral Pearl Navire Ltd" class="h-16 w-auto mb-4">
+          <p class="text-slate-600 mb-4">Ship suppliers and marine provisions for vessels, rigs, FPSOs, and PSOs in Nigeria.</p>
+          <p class="text-cyan italic">"Just on time... for your needs!"</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-cyan/20 transition-colors" aria-label="Facebook">
+              <i class="fab fa-facebook-f text-slate-500"></i>
+            </a>
+            <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-cyan/20 transition-colors" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in text-slate-500"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-slate-600 hover:text-cyan transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-slate-600 hover:text-cyan transition-colors">About Us</a></li>
+            <li><a href="products.html" class="text-slate-600 hover:text-cyan transition-colors">Services</a></li>
+            <li><a href="gallery.html" class="text-slate-600 hover:text-cyan transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="text-slate-600 hover:text-cyan transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Our Services</h4>
+          <ul class="space-y-3">
+            <li><a href="products.html" class="text-slate-600 hover:text-cyan transition-colors">Ship Supplies</a></li>
+            <li><a href="products.html" class="text-slate-600 hover:text-cyan transition-colors">Provisions</a></li>
+            <li><a href="products.html" class="text-slate-600 hover:text-cyan transition-colors">Bonded Stores</a></li>
+            <li><a href="products.html" class="text-slate-600 hover:text-cyan transition-colors">Technical Supplies</a></li>
+            <li><a href="products.html" class="text-slate-600 hover:text-cyan transition-colors">Cleaning Materials</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-cyan mt-1"></i>
+              <span class="text-slate-600">Opposite Plot 15 Osi Estate,<br>Haaptrust Street, Oroazi,<br>Port Harcourt, Nigeria</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-phone text-cyan mt-1"></i>
+              <div class="text-slate-600">
+                <a href="tel:+2348034352534" class="hover:text-cyan transition-colors block">+234 (0) 80 34 35 25 34</a>
+                <a href="tel:+2348175676274" class="hover:text-cyan transition-colors block">+234 (0) 81 75 67 62 74</a>
+                <a href="tel:+2348033390513" class="hover:text-cyan transition-colors block">+234 (0) 80 33 39 05 13</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-envelope text-cyan mt-1"></i>
+              <div class="text-slate-600">
+                <a href="mailto:services@coralpearlnavire.com" class="hover:text-cyan transition-colors block">services@coralpearlnavire.com</a>
+                <a href="mailto:info@coralpearlnavire.com" class="hover:text-cyan transition-colors block">info@coralpearlnavire.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-slate-200 mt-12 pt-8 text-center">
+        <p class="text-slate-500">&copy; <span id="current-year">2024</span> Coral Pearl Navire Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2348034352534?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20marine%20supplies" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors z-50" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" id="whatsapp-btn">
+    <i class="fab fa-whatsapp text-white text-2xl"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.contains('open');
+
+      if (isOpen) {
+        mobileMenu.classList.remove('open');
+        mobileMenuBtn.classList.remove('open');
+        document.body.style.overflow = '';
+      } else {
+        mobileMenu.classList.add('open');
+        mobileMenuBtn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('glass-dark', 'shadow-lg', 'scrolled');
+      } else {
+        header.classList.remove('shadow-lg', 'scrolled');
+      }
+    });
+
+    // Text rotation animation
+    const rotatingWords = ['Suppliers', 'Provisioning', 'Chandlers', 'Services'];
+    let currentIndex = 0;
+    const rotatingElement = document.getElementById('rotating-text');
+
+    function rotateText() {
+      rotatingElement.style.opacity = '0';
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % rotatingWords.length;
+        rotatingElement.textContent = rotatingWords[currentIndex];
+        rotatingElement.style.opacity = '1';
+      }, 300);
+    }
+
+    // Initialize
+    rotatingElement.textContent = rotatingWords[0];
+    setInterval(rotateText, 3000);
+  </script>
+</body>
+</html>
