@@ -93,30 +93,11 @@
       left: 0;
     }
 
-    /* Mobile menu slide animation */
+    /* Mobile menu */
     #mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-    }
-    #mobile-menu.open {
-      max-height: 300px;
-      opacity: 1;
-    }
-
-    /* Hamburger to X animation */
-    .hamburger-line {
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    #mobile-menu-btn.open .hamburger-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    #mobile-menu-btn.open .hamburger-line:nth-child(2) {
-      opacity: 0;
-    }
-    #mobile-menu-btn.open .hamburger-line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     }
 
     /* Header shrink on scroll */
@@ -184,18 +165,14 @@
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden p-2 text-slate-900" id="mobile-menu-btn" aria-label="Toggle navigation">
-          <div class="w-6 h-6 flex flex-col justify-center items-center pointer-events-none">
-            <span class="hamburger-line block w-6 h-0.5 bg-slate-900 mb-1.5 pointer-events-none"></span>
-            <span class="hamburger-line block w-6 h-0.5 bg-slate-900 mb-1.5 pointer-events-none"></span>
-            <span class="hamburger-line block w-6 h-0.5 bg-slate-900 pointer-events-none"></span>
-          </div>
+        <button class="md:hidden p-2 text-slate-900 text-2xl" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fas fa-bars pointer-events-none" id="menu-icon"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div class="md:hidden glass-dark" id="mobile-menu">
+    <div id="mobile-menu" style="display:none;">
       <div class="px-4 py-4 space-y-3">
         <a href="index.html" class="block text-slate-600 hover:text-cyan font-medium py-2">Home</a>
         <a href="about.html" class="block text-slate-600 hover:text-cyan font-medium py-2">About</a>
@@ -445,17 +422,20 @@
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
+    const menuIcon = document.getElementById('menu-icon');
+    let menuOpen = false;
     mobileMenuBtn.addEventListener('click', function() {
-      const isOpen = mobileMenu.classList.contains('open');
-
-      if (isOpen) {
-        mobileMenu.classList.remove('open');
-        mobileMenuBtn.classList.remove('open');
-        document.body.style.overflow = '';
-      } else {
-        mobileMenu.classList.add('open');
-        mobileMenuBtn.classList.add('open');
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.style.display = 'block';
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
         document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.style.display = 'none';
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+        document.body.style.overflow = '';
       }
     });
 
